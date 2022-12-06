@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url(./typewriter.css);
+html {
+  background-image: linear-gradient(
+    0deg,
+    rgb(255, 222, 233) 0%,
+    rgb(181, 255, 252) 100%
+  );
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Fredoka One", cursive;
+}
+a {
+  text-decoration: none;
+}
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid #777;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+.select select {
+  grid-area: select;
+}
+.label-modal {
+  font-size: 1.125rem;
+
+  text-transform: capitalize;
+}
+.navigation {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  background-image: linear-gradient(
+    160deg,
+    rgb(0, 147, 233) 0%,
+    rgb(128, 208, 199) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4px solid black;
+  padding: 15px;
+  flex-direction: column;
+}
+.title-game {
+  color: white;
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s linear;
+}
+.heart img {
+  width: 50px;
+  height: 50px;
+}
+.information {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.info,
+.btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.info_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.info_item .icon {
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #0eade4;
+  border: 2px solid #070707;
+  border-radius: 5px;
+}
+.info_item .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.info_item .content {
+  min-width: 100px;
+  border: 2px solid #070707;
+  border-radius: 5px;
+  min-height: 50px;
+  background-color: #0eade4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.container {
+  margin: 10px auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+  background-image: linear-gradient(
+    160deg,
+    rgb(0, 147, 233) 0%,
+    rgb(128, 208, 199) 100%
+  );
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #00a7c4;
+  border-radius: 10px;
+  border: 3px solid black;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background: #282a3a;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+.card-back {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fdf8e6;
+  transform: rotateY(180deg) rotateZ(50deg);
+  user-select: none;
+}
+.card.flipped .card-front {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0) rotateZ(0);
+}
+.card-img {
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.show {
+  opacity: 1;
+  transition: 0.5s;
+}
+.hide {
+  opacity: 0;
+  transition: 0.5s;
+}
+.done {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s linear;
+}
+.notification {
+  background-color: white;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  border: 2px solid black;
+  background-color: #00a7c4;
+  color: white;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  box-shadow: 0px 4px 2px 0px #000;
+}
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 2px 0px #000;
+}
+.close {
+  background-color: #be1414;
+  color: white;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 0 auto;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.question {
+  background-size: 100% 100%;
+  background-image: url(./imgs/question.png);
+}
+.modal-container {
+  z-index: 99;
+  position: fixed;
+  inset: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(22, 21, 21, 0.664);
+}
+.modal-header {
+  font-size: 20px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.modal-close {
+  padding: 5px 10px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-body {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  inset: 50% auto auto 50%;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  gap: 20px;
+  box-shadow: 1px 0px 19px 4px #2f2a2ad4;
+}
+.modal-footer {
+  display: flex;
+  padding: 10px;
+  background-color: #f5f4f7;
+  justify-content: center;
+  align-items: center;
+}
+.npc-img {
+  width: 300px;
+  height: 200px;
+  position: relative;
+}
+.npc-img img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+.desc {
+  display: flex;
+
+  flex-direction: column;
+  gap: 10px;
+}
+#text {
+  color: rgba(19, 21, 22, 0.521);
+  font-family: Courier New;
+  font-size: 30px;
+  text-shadow: 0px 0px 10px rgb(136, 129, 129), 0px 0px 5px rgb(197, 197, 197);
+  font-weight: bold;
+}
